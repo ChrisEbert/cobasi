@@ -1,0 +1,39 @@
+{
+  "name": "cobasi",
+  "version": "0.1.0",
+  "description": "COdeBAseSIze. Static analysis and visualization of your codebase.",
+  "license": "MIT",
+  "repository": "ChrisEbert/cobasi",
+  "author": {
+    "name": "Chris Ebert",
+    "email": "chris@computerede.de",
+    "url": "github.com/ChrisEbert"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo && mocha"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    ""
+  ],
+  "dependencies": {
+    "map-stream": "0.0.6",
+    "sloc": "^0.1.9",
+    "vinyl-fs": "^1.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "xo": "^0.7.1"
+  },
+  "xo": {
+    "envs": [
+      "node",
+      "mocha"
+    ]
+  }
+}
