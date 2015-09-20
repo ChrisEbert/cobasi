@@ -23,7 +23,7 @@ cobasi(['./fixtures/**/*', './fixtures/**/.*']);
 
 ## API
 
-### scany(files)
+### cobasi(files)
 
 #### files
 
