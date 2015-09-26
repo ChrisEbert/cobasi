@@ -28,8 +28,7 @@
     "size"
   ],
   "dependencies": {
-    "globby": "^3.0.1",
-    "promise": "^7.0.4"
+    "globby": "^3.0.1"
   },
   "devDependencies": {
     "mocha": "^2.2.5",

@@ -16,7 +16,7 @@ $ npm install --save cobasi
 var cobasi = require('cobasi');
 
 cobasi(['./fixtures/**/*', './fixtures/**/.*']);
-//{ "files" : 5, "folders" : 19 "sloc" : 2 }
+//{ "files" : 5, "folders" : 19, "sloc" : 2 }
 
 ```
 
