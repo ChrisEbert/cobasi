@@ -19,7 +19,6 @@ cobasi(['./fixtures/**/*', './fixtures/**/.*']);
 //Total Files: 4 Total Sloc: 18 Total Folders: 2
 
 ```
-Cobasi is using [sloc](https://www.npmjs.com/package/sloc) to get file statistics.
 
 
 ## API
