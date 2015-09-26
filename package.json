@@ -1,6 +1,6 @@
 {
   "name": "cobasi",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "COdeBAseSIze. Static analysis and visualization of your codebase.",
   "license": "MIT",
   "repository": "ChrisEbert/cobasi",
