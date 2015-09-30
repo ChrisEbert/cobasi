@@ -3,7 +3,7 @@
 var assert = require('assert');
 var cobasi = require('./../index');
 var expectedResult = {
-    files: 7,
+    files: 10,
     sloc: 21,
     folders: 2
 };
