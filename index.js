@@ -2,6 +2,7 @@
 
 var fs = require('fs');
 var globby = require('globby');
+var ProgressBar = require('progress');
 
 module.exports = function (glob, options) {
     options = options || {};
@@ -9,7 +10,14 @@ module.exports = function (glob, options) {
     var totalFiles = 0;
     var totalSloc = 0;
     var totalFolders = 0;
+
+    console.log('fetching codebase...');
+
     var files = globby.sync(glob);
+
+    var bar = new ProgressBar('analyzing codebase [:bar] :percent', {
+        total: files.length
+    });
 
     files.forEach(function (file) {
         var fileStats = fs.lstatSync(file);
@@ -23,6 +31,8 @@ module.exports = function (glob, options) {
             totalFiles++;
             totalSloc += sloc;
         }
+
+        bar.tick();
     });
 
     var result = {
