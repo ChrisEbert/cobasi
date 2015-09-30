@@ -3,6 +3,9 @@
 var fs = require('fs');
 var globby = require('globby');
 var ProgressBar = require('progress');
+var readChunk = require('read-chunk');
+var fileType = require('file-type');
+var isSvg = require('is-svg');
 
 module.exports = function (glob, options) {
     options = options || {};
@@ -25,11 +28,17 @@ module.exports = function (glob, options) {
         if (fileStats.isDirectory() === true) {
             totalFolders++;
         } else if (fileStats.isFile() === true) {
-            var content = fs.readFileSync(file, 'utf8') || '';
-            var sloc = content.split(/\r\n|\r|\n/).length;
+            var buffer = readChunk.sync(file, 0, 262);
+
+            if (fileType(buffer) === null) {
+                var content = fs.readFileSync(file, 'utf8') || '';
+
+                if (isSvg(content) === false) {
+                    totalSloc += content.split(/\r\n|\r|\n/).length;
+                }
+            }
 
             totalFiles++;
-            totalSloc += sloc;
         }
 
         bar.tick();
